@@ -9,6 +9,8 @@ plt.xlabel("indices")
 plt.ylabel("valores")
 plt.savefig("fig/bubble-inicio.png")
 plt.close()
+a=0
+cont = 0
 # considerando i numeros da lista comecando na posicao 0 e terminando na posicao N-1, indo de 1 a 1 
 for i in range(0, N-1, 1):
 # considerando j numeros da lista comecando em uma posicao a frente do i e terminando no numero da ultima posicao da lista, indo de 1 a 1
@@ -18,6 +20,26 @@ for i in range(0, N-1, 1):
             temp = lista[i]
             lista[i] = lista[j]
             lista[j] = temp
+            a=a+1
+            plt.figure() 
+            plt.plot (range(0, N), lista, "ok")
+            plt.title("bubble-troca-{}".format(a))
+            plt.xlabel("indices")
+            plt.ylabel("valores")
+            plt.savefig("fig/bubble-troca-{}.png".format(a))
+            plt.close()
+        x = range(0,20,1)
+        y = lista
+        plt.figure()
+        plt.plot(x, y, 'ok')
+        plt.plot (i, lista[i], "or")
+        plt.plot (j, lista[j], "ob")
+        plt.title("bubble-it-{}".format(cont))
+        plt.xlabel("indices")
+        plt.ylabel("valores")
+        plt.savefig("fig/bubble-it-{}.png".format(cont))
+        cont += 1
+        plt.close()
 print("lista ordem crescente", lista)
 plt.figure()
 plt.plot (range(0, N), lista, "ok")
